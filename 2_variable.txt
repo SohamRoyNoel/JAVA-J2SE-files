@@ -1,0 +1,35 @@
+public class class1 
+{
+	public static void main(String[] args) 
+	{
+		//int width of 32
+		//int no=10;
+		//int no=10+5;
+		//int no=(10+5)*(5*5); 
+		int x=10;
+		int y=20;
+		int z=30;
+		int v=(x+y+z);
+		System.out.println("int : "+ v);
+		
+		//long width of 64
+		long n=1000000000000000L;
+		System.out.println("long : "+ n);
+		
+		//byte width of 8
+		byte m=100;
+		System.out.println("byte : "+ m);
+		int p=50;
+		byte m1=(byte)(p/2);
+		System.out.println(m1);
+		
+		//challange
+		int t=10;
+		long t1=20;
+		short t2=30; //has width of 16
+		byte t3=40;
+		int res=(int)(t*t1*t2*t3);
+		System.out.println("challange : "+ res);
+	}
+
+}

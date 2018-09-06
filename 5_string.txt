@@ -1,0 +1,29 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        String a="my";
+        System.out.println(a);
+        String b="Name";
+        System.out.println(a+b);
+        String c="Is";
+        System.out.println(a+b+c);
+        String d="Duku";
+        System.out.println(a+b+c+d);
+
+        String x="150";
+        String y="200";
+        System.out.println(x+y);
+
+        int n=10;
+        String m="55";
+        System.out.println(n+m);
+    }
+}
+---------------------------------------
+my
+myName
+myNameIs
+myNameIsDuku
+150200
+1055

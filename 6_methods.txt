@@ -1,0 +1,30 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        Coin(5);
+        Coin(9);
+        Coin(15);
+    }
+    public static void Coin(int v)
+    {
+        double marks=150;
+        int bonus=500;
+
+        if (v>5 && v<8)
+        {
+            int coin=(int)(marks*v)+bonus;
+            System.out.println("you got 1st coins"+coin);
+        }
+        else if (v>8 && v<10)
+        {
+            int coin=(int)(marks*v)+(bonus*2);
+            System.out.println("you got 2nd coins"+coin);
+        }
+        else
+        {
+            int coin=(int)(marks*v)+(bonus*3);
+            System.out.println("you got 3rd coins"+coin);
+        }
+    }
+}

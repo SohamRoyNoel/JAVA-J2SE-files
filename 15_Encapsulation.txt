@@ -1,0 +1,57 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Printer printer=new Printer(100.0, 80000, true);
+        printer.feel_the_toner();
+    }
+}
+*************************************
+package com.company;
+
+public class Printer {
+    private double toner_lvl;
+    private int no_of_pages;
+    private boolean Simplex_or_duplex;
+
+    public Printer(double toner_lvl, int no_of_pages, boolean simplex_or_duplex) {
+        this.toner_lvl = toner_lvl;
+        this.no_of_pages = no_of_pages;
+        Simplex_or_duplex = simplex_or_duplex;
+    }
+
+    public void feel_the_toner(){
+        for (int i=1;i<=this.no_of_pages; i++)
+        {
+            if (this.toner_lvl>1) {
+                print(i);
+                this.toner_lvl = this.toner_lvl - this.toner_lvl * 0.001;
+                System.out.println("ink level : " + this.toner_lvl);
+            }
+            else
+            {
+                System.out.println("you dont have sufficient ink to print more pages");;
+                System.out.println("printed : " + (i-1) + " pages");
+                System.out.println("remained : " + (this.no_of_pages-i));
+                break;
+            }
+        }
+    }
+
+    public void print(int i){
+        System.out.println("page "+ i +" is printing");
+    }
+
+    public double getToner_lvl() {
+        return toner_lvl;
+    }
+
+    public int getNo_of_pages() {
+        return no_of_pages;
+    }
+
+    public boolean isSimplex_or_duplex() {
+        return Simplex_or_duplex;
+    }
+}

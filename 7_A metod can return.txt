@@ -1,0 +1,75 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        System.out.println("10 : "+Coin(10));
+        System.out.println("20 : "+Coin(20));
+        System.out.println(Coin(50));
+        System.out.println(Coin(65));
+        System.out.println(Coin(75));
+        System.out.println(Coin(85));
+        System.out.println(Coin(95));
+        System.out.println(Coin(100));
+    }
+    public static String Coin(int v)
+    {
+        if (v>=10 && v<=20)
+            return "I";
+        else if (v>=21 && v<=30)
+            return "H";
+        else if (v>=31 && v<=40)
+            return "G";
+        else if (v>=41 && v<=50)
+            return "F";
+        else if (v>=51 && v<=60)
+            return "E";
+        else if (v>=61 && v<=70)
+            return "D";
+        else if (v>=71 && v<=80)
+            return "C";
+        else if (v>=81 && v<=90)
+            return "B";
+        else if (v>=91 && v<=100)
+            return "A";
+        else
+            return "Out of range";
+    }
+}
+************************************************************************
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        Player("Tim", 15);
+        Player("John", 96);
+        Player("Appy", 50);
+        Player("Finn", 60);
+        Player("Tom", 61);
+        Player("Ron", 100);
+    }
+    public static void Player(String s, int v)
+    {
+        System.out.println("Name : "+s+" Scored : "+v);
+        System.out.println(Type(v));
+    }
+    public static String Type(int n)
+    {
+        if (n>50)
+            return ("good player with " +n+" goals");
+        else
+            return ("Bad plaer with "+n+" goals");
+    }
+}
+------------------------------
+Name : Tim Scored : 15
+Bad plaer with 15 goals
+Name : John Scored : 96
+good player with 96 goals
+Name : Appy Scored : 50
+Bad plaer with 50 goals
+Name : Finn Scored : 60
+good player with 60 goals
+Name : Tom Scored : 61
+good player with 61 goals
+Name : Ron Scored : 100
+good player with 100 goals

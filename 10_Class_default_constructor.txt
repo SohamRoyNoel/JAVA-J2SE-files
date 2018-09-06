@@ -1,0 +1,72 @@
+public class Class1
+{
+    private String name;
+    private int credit_limit;
+    private String email;
+
+    public Class1(String nm,int credit, String em)
+    {
+        this.name=nm;
+        this.credit_limit=credit;
+        this.email=em;
+    }
+
+    public Class1()
+    {
+        this("no name", 0, "no email");
+    }
+
+    public Class1(String nm, int cre)
+    {
+        this.email="no email found";
+    }
+
+    public void Deposite(String nm, int mn, String em)
+    {
+        if (this.name==nm)
+        {
+            if (this.name==em)
+            {
+                this.credit_limit = this.credit_limit + mn;
+                System.out.println("You have deposited : " + mn);
+                System.out.println("Your balance : " + this.credit_limit);
+                System.out.println("Transaction successfull");
+            }
+        }
+    }
+    public void withdraw(String nm, int  mn, String em)
+    {
+        if (this.name==nm)
+        {
+            if (this.email==em)
+            {
+                if (this.credit_limit >= mn) {
+                    this.credit_limit -= mn;
+                    System.out.println("Your balance : " + this.credit_limit);
+                }
+                else {
+                    System.out.println("You dont have sufficient balance");
+                    System.out.println("Your balance : " + this.credit_limit);
+                }
+            }
+            else
+            {
+               System.out.println("Email didnt match");
+            }
+        }
+        else
+        {
+            System.out.println("user doesn't exists");
+        }
+    }
+}
+***********************************************************************************
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        Class1 ob=new Class1("Tim", 500, "s@gmail.com");
+        ob.Deposite("Tim", 900, "s@gmail.com");
+        ob.withdraw("Tim", 20000, "s@gmail.com");
+    }
+}

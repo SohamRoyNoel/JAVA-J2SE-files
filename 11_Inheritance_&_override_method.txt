@@ -1,0 +1,108 @@
+MAIN CLASS
+********************************************************************************
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        Class1 ob=new Class1("Tom", 1,1,569,900);
+
+        class2 ob1=new class2("Dog", 50, 965, 5, 2, 1,4);
+
+        ob.Print();
+        ob1.Print();
+    }
+}
+********************************************************************************
+CLASS 1
+********************************************************************************
+//Super class
+public class Class1{
+    private String name;
+    private int brain;
+    private int body;
+    private int size;
+    private int weight;
+
+    public Class1(String name, int brain, int body, int size, int  wait) {
+        this.name = name;
+        this.brain = brain;
+        this.body = body;
+        this.size = size;
+        this.weight = weight;
+    }
+
+    public void Print()
+    {
+        System.out.println("From class1");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBrain() {
+        return brain;
+    }
+
+    public int getBody() {
+        return body;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+}
+********************************************************************************
+CLASS 2
+********************************************************************************
+//Inherited
+public class class2 extends Class1 {
+
+    private int leg;
+    private int nuts;
+    private int dick;
+    private int boobs;
+
+    public class2(String name, int size, int wait, int leg, int nuts, int dick, int boobs) {
+        super(name, 1, 1, size, wait);
+        this.leg = leg;
+        this.nuts = nuts;
+        this.dick = dick;
+        this.boobs = boobs;
+    }
+
+    //own method
+    private void Chos()
+    {
+        System.out.println("From class2.dog");
+    }
+    //getter method
+    public int getLeg() {
+        return leg;
+    }
+
+    public int getNuts() {
+        return nuts;
+    }
+
+    public int getDick() {
+        return dick;
+    }
+
+    public int getBoobs() {
+        return boobs;
+    }
+
+    //overriding the Class1.Print() method
+
+    @Override
+    public void Print() {
+        System.out.println("Overriding the Class1.Print() method");
+        Chos();
+        super.Print();
+    }
+}

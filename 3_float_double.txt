@@ -1,0 +1,18 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        int z=5/3;
+        float z1=5f/3f;
+        double z2=5d/3d;
+        System.out.println(z);//1
+        System.out.println(z1); //1.6666666
+        System.out.println(z2); //1.6666666666666667
+
+        //challange
+        double d=0.45359237;
+        int pounds=200;
+        double n=pounds*d;
+        System.out.println(n);
+    }
+}

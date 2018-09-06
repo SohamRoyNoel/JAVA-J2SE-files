@@ -1,0 +1,191 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        for (int i=0;i<=10;i++) {
+            Car car=Poly();
+            System.out.println(" Start : " + car.StartEngine() + "\n"
+                                + "Accelerate : " + car.accelerate() + "\n"
+                                + "Stop : " + car.break1());
+
+            System.out.println();
+        }
+    }
+
+    public static Car Poly(){ //polymorphysm occurs on Car type
+
+        int rand=(int) (Math.random()*3)+1;
+        System.out.println("Randomly choosen car is : " + rand);
+
+        switch (rand){
+                case 1: return new BMW();
+
+                case 2: return new Audi();
+
+                case 3: return new Porce();
+            }
+        return null;
+    }
+}
+class Car{
+    private String Engine;
+    private int Cylinder;
+    private int wheels;
+    private String Name;
+
+    public Car(String engine, int cylinder, int wheels, String name) {
+        Engine = engine;
+        Cylinder = cylinder;
+        this.wheels = wheels;
+        Name = name;
+    }
+
+    public String StartEngine(){
+       return "engine started";
+    }
+
+    public String accelerate(){
+        return "engine accelerated";
+    }
+
+    public String break1(){
+        return "engine stopped";
+    }
+
+    public String getEngine() {
+        return Engine;
+    }
+
+    public int getCylinder() {
+        return Cylinder;
+    }
+
+    public int getWheels() {
+        return wheels;
+    }
+
+    public String getName() {
+        return Name;
+    }
+}
+class BMW extends Car{
+    public BMW() {
+        super("gtx", 5,4,"BMW a7");
+    }
+
+    @Override
+    public String StartEngine() {
+        return "BMW started";
+    }
+
+    @Override
+    public String accelerate() {
+        return "BMW accelerated";
+    }
+
+    @Override
+    public String break1() {
+        return "BMW stopped";
+    }
+}
+class Audi extends Car{
+    public Audi() {
+        super("gty", 4,4,"audi 5");
+    }
+
+    @Override
+    public String StartEngine() {
+        return "Audi started";
+    }
+
+    @Override
+    public String accelerate() {
+        return "Audi accelerated";
+    }
+
+    @Override
+    public String break1() {
+        return "Audi stopped";
+    }
+}
+class Porce extends Car{
+    public Porce() {
+        super("gtz", 3,2,"por 5");
+    }
+
+    @Override
+    public String StartEngine() {
+        return "Porce started";
+    }
+
+    @Override
+    public String accelerate() {
+        return "Porce accelerated";
+    }
+
+    @Override
+    public String break1() {
+        return "Porce stopped";
+    }
+}
+********************************************************************
+"C:\Program Files\Java\jdk-9.0.1\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3.4\lib\idea_rt.jar=59535:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3.4\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\HP\IdeaProjects\Polymorphism_2\out\production\Polymorphism_2 com.company.Main
+Randomly choosen car is : 2
+ Start : Audi started
+Accelerate : Audi accelerated
+Stop : Audi stopped
+
+Randomly choosen car is : 1
+ Start : BMW started
+Accelerate : BMW accelerated
+Stop : BMW stopped
+
+Randomly choosen car is : 1
+ Start : BMW started
+Accelerate : BMW accelerated
+Stop : BMW stopped
+
+Randomly choosen car is : 3
+ Start : Porce started
+Accelerate : Porce accelerated
+Stop : Porce stopped
+
+Randomly choosen car is : 1
+ Start : BMW started
+Accelerate : BMW accelerated
+Stop : BMW stopped
+
+Randomly choosen car is : 1
+ Start : BMW started
+Accelerate : BMW accelerated
+Stop : BMW stopped
+
+Randomly choosen car is : 1
+ Start : BMW started
+Accelerate : BMW accelerated
+Stop : BMW stopped
+
+Randomly choosen car is : 2
+ Start : Audi started
+Accelerate : Audi accelerated
+Stop : Audi stopped
+
+Randomly choosen car is : 3
+ Start : Porce started
+Accelerate : Porce accelerated
+Stop : Porce stopped
+
+Randomly choosen car is : 3
+ Start : Porce started
+Accelerate : Porce accelerated
+Stop : Porce stopped
+
+Randomly choosen car is : 1
+ Start : BMW started
+Accelerate : BMW accelerated
+Stop : BMW stopped
+
+
+Process finished with exit code 0

@@ -1,0 +1,209 @@
+COMPOSITION: A PLACE WHERE INHERITANCE IS NOT NEEDED, IT IS USED AS A DATAYPE
+Main
+********************************************************
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        HP hp=new HP(200,200,5,1800,"i7");
+        hp.info();
+    }
+}
+**********************************************************
+HP
+**********************************************************
+package com.company;
+
+public class HP {
+    private int height;
+    private int width;
+    private int ram_slot;
+    private int clock_speed;
+    private String processor;
+//    private resolution x;
+//    private core y;
+//    private  cache z;
+
+    public HP(int height, int width, int ram_slot, int clock_speed, String processor) {
+        this.height = height;
+        this.width = width;
+        this.ram_slot = ram_slot;
+        this.clock_speed = clock_speed;
+        this.processor = processor;
+    }
+
+    public void info(){
+        resolution rt=new resolution(this.height, this.width);
+        rt.ret_resolution();
+
+        core ct=new core(this.ram_slot);
+        ct.coreab();
+
+
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getRam_slot() {
+        return ram_slot;
+    }
+
+    public int getClock_speed() {
+        return clock_speed;
+    }
+
+    public String getProcessor() {
+        return processor;
+    }
+}
+**********************************************************************
+MONITOR
+**********************************************************************
+package com.company;
+
+public class Monitor {
+    private int height;
+    private int width;
+    private resolution display;
+
+    public Monitor(int height, int width, resolution display) {
+        this.height = height;
+        this.width = width;
+        this.display = display;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+    public int getWidth() {
+        return width;
+    }
+
+    public resolution getDisplay() {
+        return display;
+    }
+}
+**********************************************************************
+OTHER_BOARD
+**********************************************************************
+package com.company;
+
+public class Mother_board {
+    private int ram_slot;
+    private int clock_speed;
+    private String processor;
+    private cache cash;
+    private core ram;
+
+    public Mother_board(int ram_slot, int clock_speed, String processor, cache cash, core ram) {
+        this.ram_slot = ram_slot;
+        this.clock_speed = clock_speed;
+        this.processor = processor;
+        this.cash = cash;
+        this.ram = ram;
+    }
+
+
+    public int getRam_slot() {
+        return ram_slot;
+    }
+
+    public int getClock_speed() {
+        return clock_speed;
+    }
+
+    public String getProcessor() {
+        return processor;
+    }
+
+    public core getRam() {
+        return ram;
+    }
+
+    public cache getCash() {
+        return cash;
+    }
+}
+**********************************************************************
+RESOLUTION
+**********************************************************************
+package com.company;
+
+public class resolution {
+    private int height;
+    private int weight;
+
+    public resolution(int height, int weight) {
+        this.height = height;
+        this.weight = weight;
+    }
+
+    public void ret_resolution()
+    {
+        System.out.println(this.height*this.weight);
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+}
+**********************************************************************
+CORE
+**********************************************************************
+package com.company;
+
+public class core {
+    private int slot;
+
+    public core(int slot) {
+
+        this.slot = slot;
+    }
+
+    public void coreab(){
+        System.out.println("Cores are : "+ this.slot*5);
+    }
+}
+**********************************************************************
+CACHE
+**********************************************************************
+package com.company;
+
+public class cache {
+    private int ram;
+    private core c;
+    private cache csh;
+
+    public cache(int ram, core c, cache csh) {
+        this.ram = ram;
+        this.c = c;
+        this.csh = csh;
+    }
+
+    public void caches(){
+        System.out.println("Caches are : "+this.ram*1200);
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public core getC() {
+        return c;
+    }
+
+    public cache getCsh() {
+        return csh;
+    }
+}

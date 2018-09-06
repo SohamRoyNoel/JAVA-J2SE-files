@@ -1,0 +1,245 @@
+***********************************************************
+Main
+***********************************************************
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        MotherBoard motherBoard=new MotherBoard("A-720", "HP", 2, 2, "Hemi");
+
+        Resolution nativeres=new Resolution(50,50);
+        Monitor monitor=new Monitor("Kotlin", "Microsoft", 27, nativeres);
+
+        //new Dimension() can be use instade of object
+        //Dimension dimension=new Dimension(50,50,50);
+        Case apcase=new Case("Jpeg", "Dell", "220",
+                new Dimension(50,50,50));
+
+        Pc pc=new Pc(monitor, motherBoard, apcase);
+
+        //invoking drawpixel method from Monitor.jave
+        //Monitor can be accessed from Pc.java,
+        // use monitor object
+        //will give you access to the Drawpixel method in Monitor.java
+        pc.getMonitor().Drawpixel(200,500,"blue");
+        pc.getMotherBoard().loadpg("windows 10");
+        pc.getaCase().presspower();
+        
+        //monitor.Drawpixel(200, 500, "blue");
+        //apcase.presspower();
+        //motherBoard.loadpg("windows 10 loading.....");
+
+
+    }
+}
+
+***********************************************************
+MotherBoard
+***********************************************************
+package com.company;
+
+public class MotherBoard {
+    private String model;
+    private String manufacturer;
+    private int ramslot;
+    private int card;
+    private String bios;
+
+    public MotherBoard(String model, String manufacturer, int ramslot, int card, String bios) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.ramslot = ramslot;
+        this.card = card;
+        this.bios = bios;
+    }
+
+    public void loadpg(String programme_name){
+        System.out.println("Programme "+programme_name + " is now loading...");
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getRamslot() {
+        return ramslot;
+    }
+
+    public int getCard() {
+        return card;
+    }
+
+    public String getBios() {
+        return bios;
+    }
+}
+
+***********************************************************
+Monitor
+***********************************************************
+package com.company;
+
+public class Monitor {
+    private String model;
+    private String manufacturer;
+    private int size;
+    private Resolution nativeResolution; //monitor is not resolution, but it has a resolution
+
+    public Monitor(String model, String manufacturer, int size, Resolution nativeResolution) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.size = size;
+        this.nativeResolution = nativeResolution;
+    }
+
+    public void Drawpixel(int x, int y, String color){
+        System.out.println("Picture drawn at : ("+ x + "," + y +") with color : " + color);
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Resolution getNativeResolution() {
+        return nativeResolution;
+    }
+}
+
+***********************************************************
+Case
+***********************************************************
+package com.company;
+
+import java.awt.*;
+
+public class Case {
+    private String model;
+    private String manufacturer;
+    private String powersupply;
+    private Dimension Dim;
+
+    public Case(String model, String manufacturer, String powersupply, Dimension dim) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.powersupply = powersupply;
+        Dim = dim;
+    }
+
+    public void presspower(){
+        System.out.println("power button pressed");
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public String getPowersupply() {
+        return powersupply;
+    }
+
+    public Dimension getDim() {
+        return Dim;
+    }
+}
+
+***********************************************************
+Pc
+***********************************************************
+package com.company;
+
+public class Pc {
+    private Monitor monitor;
+    private MotherBoard motherBoard;
+    private Case aCase;
+
+    public Pc(Monitor monitor, MotherBoard motherBoard, Case aCase) {
+        this.monitor = monitor;
+        this.motherBoard = motherBoard;
+        this.aCase = aCase;
+    }
+
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public MotherBoard getMotherBoard() {
+        return motherBoard;
+    }
+
+    public Case getaCase() {
+        return aCase;
+    }
+}
+
+***********************************************************
+Dimensions
+***********************************************************
+package com.company;
+
+public class Dimension {
+    private int width;
+    private int height;
+    private int depth;
+
+    public Dimension(int width, int height, int depth) {
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+}
+
+***********************************************************
+Resolution
+***********************************************************
+package com.company;
+
+public class Resolution {
+    private int height;
+    private int width;
+
+    public Resolution(int height, int width) {
+        this.height = height;
+        this.width = width;
+    }
+
+
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+}
+

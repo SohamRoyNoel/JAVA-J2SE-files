@@ -1,0 +1,121 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        for (int i=0;i<=10;i++)
+        {
+            Movie movie=Random();
+            System.out.println("movie : " + movie.getName() + " Plot : " + movie.plot()); //movie.plot() appears here bcz of Polymorphism
+        }
+    }
+
+    public static Movie Random(){ //works on movie class
+        int x= (int)(Math.random()*6)+1;
+        System.out.println("Random no is : " + x);
+
+        switch (x){
+            case 1: return new Blue_film();
+
+            case 2: return new BDSM();
+
+            case 3: return new  Big_dick();
+
+            case 4: return new Big_dick();
+
+            case 5: return new Lessbian();
+
+            case 6: return new Gay();
+
+        }
+        return null;
+    }
+}
+class Movie{
+    String name;
+
+    public Movie(String name) {
+        this.name = name;
+    }
+
+    public String plot(){
+        return "no fucking method";
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+class Blue_film extends Movie{
+    public Blue_film() { //this should not be created automatically coz we are not passing parameter
+        super("Blue_film");
+    }
+
+    @Override
+    public String plot() {
+        return "a man fucked hard an woman";
+    }
+}
+class BDSM extends Movie{
+    public BDSM() {
+        super("BDSM");
+    }
+
+    @Override
+    public String plot() {
+        return "woman got tied hard, and tortured with wax.";
+    }
+}
+class Big_dick extends Movie {
+    public Big_dick() {
+        super("Big_dick");
+    }
+
+    @Override
+    public String plot() {
+        return "12 inches went inside asshole. ";
+    }
+}
+class Lessbian extends Movie {
+    public Lessbian() {
+        super("Lessbian");
+    }
+
+    @Override
+    public String plot() {
+        return "Lessbians had hard sex";
+    }
+}
+class Gay extends Movie {
+    public Gay() {
+        super("Gay");
+    }
+
+    //no overridden method
+}
+******************************************************************************
+"C:\Program Files\Java\jdk-9.0.1\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3.4\lib\idea_rt.jar=59387:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3.4\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\HP\IdeaProjects\Encapculation\out\production\Encapculation com.company.Main
+Random no is : 1
+movie : Blue_film Plot : a man fucked hard an woman
+Random no is : 2
+movie : BDSM Plot : woman got tied hard, and tortured with wax.
+Random no is : 5
+movie : Lessbian Plot : Lessbians had hard sex
+Random no is : 5
+movie : Lessbian Plot : Lessbians had hard sex
+Random no is : 6
+movie : Gay Plot : no fucking method
+Random no is : 1
+movie : Blue_film Plot : a man fucked hard an woman
+Random no is : 6
+movie : Gay Plot : no fucking method
+Random no is : 1
+movie : Blue_film Plot : a man fucked hard an woman
+Random no is : 3
+movie : Big_dick Plot : 12 inches went inside asshole. 
+Random no is : 1
+movie : Blue_film Plot : a man fucked hard an woman
+Random no is : 6
+movie : Gay Plot : no fucking method
+
+Process finished with exit code 0

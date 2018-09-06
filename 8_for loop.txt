@@ -1,0 +1,68 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        for (int i=10;i<=100;i=i+10)
+        {
+            System.out.println(i+"th grade : "+Coin(i));
+        }
+    }
+    public static String Coin(int v)
+    {
+        if (v>=10 && v<=20)
+            return "I";
+        else if (v>=21 && v<=30)
+            return "H";
+        else if (v>=31 && v<=40)
+            return "G";
+        else if (v>=41 && v<=50)
+            return "F";
+        else if (v>=51 && v<=60)
+            return "E";
+        else if (v>=61 && v<=70)
+            return "D";
+        else if (v>=71 && v<=80)
+            return "C";
+        else if (v>=81 && v<=90)
+            return "B";
+        else if (v>=91 && v<=100)
+            return "A";
+        else
+            return "Out of range";
+    }
+}
+************************************************************************
+public class new_java
+{
+    int c=0;
+    public static void main(String[] args)
+    {
+        for (int i=1;i<=10;i++)
+        {
+            Print_pm(i);
+        }
+    }
+    public static boolean Prime(int v)
+    {
+        boolean b=true;
+        for (int i=2;i<=v/2;i++)
+        {
+            if (v%i==0)
+            {
+                b=false;
+            }
+        }
+        return b;
+    }
+    public static void Print_pm(int v)
+    {
+        if (Prime(v))
+        {
+            if (c<3)
+            {
+                System.out.println(v + " is a prime number.");
+                c++;
+            }
+        }
+    }
+}

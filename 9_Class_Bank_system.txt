@@ -1,0 +1,52 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        Class1 ob=new Class1("Tim", 500);
+        ob.Deposite("Tim", 900);
+        ob.withdraw("Tim", 20000);
+    }
+}
+**********************************************
+public class Class1
+{
+    private String name;
+    private int money;
+
+    public Class1(String nm,int mny)
+    {
+        this.name=nm;
+        this.money=mny;
+    }
+
+    public void Deposite(String nm, int mn)
+    {
+        if (this.name==nm)
+        {
+            this.money=this.money+mn;
+            System.out.println("You have deposited : "+mn);
+            System.out.println("Your balance : "+this.money);
+            System.out.println("Transaction successfull");
+        }
+    }
+    public void withdraw(String nm, int  mn)
+    {
+        if (this.name==nm)
+        {
+            if (this.money>=mn)
+            {
+                this.money-=mn;
+                System.out.println("Your balance : "+this.money);
+            }
+            else
+            {
+                System.out.println("You dont have sufficient balance");
+                System.out.println("Your balance : "+this.money);
+            }
+        }
+        else
+        {
+            System.out.println("use doesn't exists");
+        }
+    }
+}

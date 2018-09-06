@@ -1,0 +1,14 @@
+public class new_java
+{
+    public static void main(String[] args)
+    {
+        char x='\u00C6'; //https://unicode-table.com/en/#thaana
+        System.out.println(x);;
+
+        boolean v=true;
+        if (v=false)
+            System.out.println("Correct");
+        else
+            System.out.println("Wrong");
+    }
+}
